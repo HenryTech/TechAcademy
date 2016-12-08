@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bootstrap</title>
+</head>
+<body>
+
+<!-- While this layout looks great at sm size and above, at xs, the text just stretches too far in relation to the headline and icons. So here, I've added a .col-xs-offset to give what look like substantial margins at xs size, making the elements look more like proper blocks of text. This screws over all the other sizes, though. It also makes the xs size layout look crowded to the right.
+
+First things first, let's get that xs layout looking better. If we're already offsetting 3, then column size of 6 should center it nicely, right? Hence, .col-xs-6. 
+
+Now we have the problem of that offset, which keeps going at all sizes larger than xs. Gotta clear that sucker! .col-sm-offset-0 clears it for sm and greater sizes. -->
+
+<div class="services container">
+    <h2>Services</h2>
+    <div class="row">
+        <section class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-6 col-md-4 col-lg-2">
+            <img class="icon" src="images/icon-health.svg" alt="Icon">
+            <h3>General Health</h3>
+            <p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health services.</p>
+        </section>
+
+        <section class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-6 col-md-4 col-lg-2">
+            <img class="icon" src="images/icon-exoticpets.svg" alt="Icon">
+            <h3>Exotic Pets</h3>
+            <p>We offer specialized care for reptiles, rodents, birds, and other exotic pets.</p>
+        </section>
+
+        <div class="clearfix visible-sm-block"></div>
+
+        <section class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-6 col-md-4 col-lg-2">
+            <img class="icon" src="images/icon-grooming.svg" alt="Icon">
+            <h3>Grooming</h3>
+            <p>Our therapeutic grooming treatments help battle fleas, allergic dermatitis, and other challenging skin conditions.</p>
+        </section>
+
+        <section class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-6 col-md-4 col-lg-2">
+            <img class="icon" src="images/icon-nutrition.svg" alt="Icon">
+            <h3>Nutrition</h3>
+            <p>Let our nutrition experts review your pet's diet and prescribe a custom nutrition plan for optimum health and disease prevention.</p>
+        </section>
+
+        <section class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-6 col-md-4 col-lg-2">
+            <img class="icon" src="images/icon-pestcontrol.svg" alt="Icon">
+            <h3>Pest Control</h3>
+            <p>We offer the latest advances in safe and effective prevention and treatment of fleas, ticks, worms, heart worm, and other parasites.</p>
+        </section>
+
+        <section class="col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-6 col-md-4 col-lg-2">
+            <img class="icon" src="images/icon-vaccinations.svg" alt="Icon">
+            <h3>Vaccinations</h3>
+            <p>Our veterinarians are experienced in modern vaccination protocols that prevent many of the deadliest diseases in pets.</p>
+        </section>
+    </div><!-- row -->
+</div><!-- content container -->
+
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

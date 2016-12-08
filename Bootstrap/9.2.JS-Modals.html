@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bootstrap</title>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#featured">Wisdom <span class="subhead">Pet Medicine</span></a>
+            </div><!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#featured">Home</a></li>
+                    <li class="active"><a href="#mission">Mission</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#staff">Staff</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div><!-- collapse navbar-collapse -->
+        </div><!-- container -->
+    </nav>
+
+<div class="content container">
+    <div class="row">
+        <section class="col-sm-12">
+
+			<h2>Preparing for a visit</h2>
+
+			<p>Your pet will get the most out of his or her visit to Wisdom, if you’re able to describe your observations of him or her over the last several days prior to your visit. This includes paying close attention to your pet’s eating habits, bowl-movement frequency, mood, activity level, sleeping habits, or any unusual behaviors such as limping or excessive scratching. Even the slightest change in a pet’s behavior can indicate the start of a health problem.</p>
+
+<!-- A modal is content that only appears when a user pushes a button. So, first we need a button. I've created one below. Notice the data attributes. Data-toggle, in this case, is specifying that this is a modal. Data-target should be the same id used to wrap the item that you want to be affected by the modal.
+
+Then I created a div with .modal and the same id I used in my data-target for my button. Tabindex is for people who like to tab through pages, often used on screen readers. With a tabindex set to -1, people will not be able to tab to this item, which is good because it's a modal. However, we should put some accessibility in for screen readers, so we've set up a role and an aria-labeledby. ModalLabel is important to remember, because it will have to match what we refer to inside the modal.
+
+Another div wrapper is created with .modal-dialog and a role so that screen readers can deal with it reasonably.
+
+A .modal-content div wrapper is created. This is a cool and complex thing, so it requires a lot of nested div wrappers to style it properly.
+
+Finally, .modal-body div wrapper is created inside all the rest, to hold the body of text that will be seen.
+
+I added the .modal-header div and placed the header inside it. I also classed the <h3> itself as .modal-title and gave it an id of #modalLabel. Remember that, up in the parent div wrapper? This is so that screen readers see this as the label of this modal. Once activated, a click outside the modal or hitting esc will exit back out of the modal, but it's nice to make a button that the user can click on to escape it. So, inside .modal-header div wrapper, let's add that. I created a button with the .close class (because it's going to close the modal), and a data-dismiss is needed so that JavaScript will know that, when somebody clicks on this button it should close the modal. I also added a screen reader accessibility item with aria-label. We still don't have any sort of label inside the button itself for people who CAN see, though, so I put in a "times" sign and set aria-hidden to true, so that screen readers wouldn't try to read it.
+
+In addition to the header and body, sometimes there is a footer, so I've added one for demonstration purposes. Look below the .modal-body closing div tag. This is usually a place to hold further buttons, but I've only added one.
+
+Modals can have an optional size attribute. In the parent .modal-dialog wrapper, I could have included .modal-lg or .modal-sm.
+
+Most people like to have their modal fade in and/or out instead of just popping. That's done at the very top div with adding the .fade class to the .modal wrapper.
+
+ -->
+
+			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#policy">Vaccination Policy</button>
+
+			<div class="modal fade" id="policy" tabindex="-1" role="dialog" aria-labeledby="modalLabel">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h3 class="modal-title" id="modalLabel">Vaccination Policy</h3>
+						</div> <!-- modal-header -->
+						<div class="modal-body">						
+							<p>Dogs and cats are susceptible to a variety of illnesses that can be completely prevented by following the appropriate vaccination schedule. At Wisdom, we approach vaccinations on a patient by patient basis, depending on the health and age of a dog, while also taking into account the vaccination schedules published by leading veterinary medical schools.</p>
+						</div> <!-- modal-body -->	
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div> <!-- modal-footer -->
+					</div> <!-- modal-content -->	
+				</div> <!-- modal-dialog -->
+			</div> <!-- modal -->
+
+
+        </section>
+    </div><!-- row -->
+</div><!-- content container -->
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

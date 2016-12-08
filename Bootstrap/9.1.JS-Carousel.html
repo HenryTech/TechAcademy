@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bootstrap</title>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#featured">Wisdom <span class="subhead">Pet Medicine</span></a>
+            </div><!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#featured">Home</a></li>
+                    <li class="active"><a href="#mission">Mission</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#staff">Staff</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div><!-- collapse navbar-collapse -->
+        </div><!-- container -->
+    </nav>
+
+<div class="content container">
+    <div class="row">
+        <section class="col-sm-12">
+
+<!-- We had three pictures, but now we've created a carousel for them to be displayed in. This involves the creation of 2 div wrappers: .carousel and .carousel-inner. After that, each image needs to be placed in a div with the .item class. With only these changes, the carousel hides all the images. In order for an initial image to show up, one of the .item wrappers has to be set to active (as seen below). Whichever one is set to active is the one that will show up. 
+
+For the carousel to automatically start and rotate through the images, we have to add data-ride="carousel" to the outer div wrapper (we're going to do this through JavaScript, so it's not included below). To make it look like the pictures are sliding in from the side, like a proper carousel, we also have to add the .slide to the outer div wrapper, as well (as below). 
+
+I've also added carousel captions for the photos, by adding a div after the image.
+
+If we need to add navigation elements to the carousel, we need to give it an id, some unique name that we'll remember. I'll use #featured for now, but it could be anything. In order for nav to work, we also have to include an anchor tag, shown at the bottom between the closing div tags.  I want the link to behave like a button, so I used role="button". This link also has a data attribue (data-slide="prev"). Data attributes are usually self-created JavaScript references that add some functionality, but can be previously defined in the framework. Data-slide is a bootstrap attribute that moves the carousel to the previous or next image (with it set to "prev", we're moving it to the previous image. To make it look right, we also need to add a class (.left carousel-control).
+
+Let's add an icon to that link, too. See the span wrapped in the anchor tag. This gives us a cool little left arrow on the left side of the picture. Since that allows us to go to the previous picture, that seems appropriate. 
+
+In order to make everything symmetrical, I've also added a link to navigate to the next picture using a rt. arrow icon.
+
+Let's add some indicators, which are little dots at the bottom of the carousel that show a user their progress through the carousel content. This allows the user to navigate directly to the photo. Oddly, these appear at the top of the code even though they appear at the bottom. For this we use an ordered list (ol) just under the opening div wrapper. Data-slide-to is a JavaScript reference, and 0 refers to the first photo. We need to have one of these for each photo in the carousel. We can also add a .active to whichever photo we want to appear when the page loads. Make sure that you are using the same .active class below in the photos! Notice that the first photo (photo 0) is given .active in both my ordered list of .carousel-indicators and in my actual content div wrapper of .carousel-inner. 
+
+Notice that this carousel is wrapped in a .container div (see above this comment block). This allows the carousel to resize nicely just like other bootstrap containers. For full-width carousels, we'd need to have it outside the .content-container. A problem with that is that the image might not be wide enough and will get some grey space at the edge. Larger images would fix this.
+
+A good idea with carousels is to PRESIZE the images in Photoshop or something, so that the content doesn't jump around to adjust to different image sizes! In this particular case, one of the images is too tall to demonstrate this problem. 
+
+Ask yourself: do mobile users even need to see this carousel? If they don't, throw in the .hidden-xs class to the main .carousel div wrapper. 
+
+For the rest of this lesson, I've done some coding in script.js. -->
+
+<div class="carousel slide" id="featured">
+<ol class="carousel-indicators">
+	<li data-target="#featured" data-slide-to="0" class="active"></li>
+	<li data-target="#featured" data-slide-to="1"></li>
+	<li data-target="#featured" data-slide-to="2"></li>
+</ol>
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="images/carousel-lifestyle.jpg" alt="Lifestyle Photo">
+			<div class="carousel-caption">
+				<h3>Lifestyle</h3>
+				<p>You and your pet's lifestyle is vital to your happiness.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="images/carousel-mission.jpg" alt="Mission">
+			<div class="carousel-caption">
+				<h3>Mission</h3>
+				<p>Our mission is to ensure a long and happy life for your pet.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="images/carousel-vaccinations.jpg" alt="Vaccinations">
+			<div class="carousel-caption">
+				<h3>Vaccinations</h3>
+				<p>Vaccinations are as important for pets as they are for humans!</p>
+			</div>
+		</div>
+	</div> <!-- carousel inner -->
+	<a class = "left carousel-control" 
+		href="#featured" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class = "right carousel-control" 
+		href="#featured" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div> <!-- carousel -->
+
+<h2>Our Mission</h2>
+
+<p>Wisdom Pet Medicine strives to blend the best in traditional and alternative medicine in the diagnosis and treatment of companion animals including dogs, cats, birds, reptiles, rodents, and fish. We apply the wisdom garnered in the centuries old tradition of veterinary medicine, to find the safest treatments and cures.</p>
+
+<p>We strive to be your pet's medical experts from youth through the senior years. We build preventative health care plans for each and every one of our patients, based on breed, age, and sex, so that your pet receives the most appropriate care at crucial milestones. We want to give your pet a long and healthy life.</p>
+
+        </section>
+    </div><!-- row -->
+</div><!-- content container -->
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

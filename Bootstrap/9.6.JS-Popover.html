@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bootstrap</title>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#featured">Wisdom <span class="subhead">Pet Medicine</span></a>
+            </div><!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#featured">Home</a></li>
+                    <li class="active"><a href="#mission">Mission</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#staff">Staff</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div><!-- collapse navbar-collapse -->
+        </div><!-- container -->
+    </nav>
+
+<div class="content container">
+    <div class="row">
+        <section class="col-sm-12">
+
+			<h3>Our Mission</h3>
+<!-- I'm going to set up a popover in a button here. If it's being used inside an element that has a button group or an input group class, then you have to use a data-container. We should also add a data-toggle and data-placement (which can be top, bottom, left or right) so that we are able to turn this on in our JavaScript. I can also add a title to the popover with data-title. Just like with tooltips, we have to go turn this on in script.js, so check over there for more.
+
+Nice! But the user has to click directly on the button to clear the popover. If I use a link instead, the user will be able to click anywhere on the page to get rid of the popover. Let's make a link instead, by using an anchor tag. Different elements are used, though! We need to include a role and tabindex for SRs and folks who tab around. Tabindex is always set to a number and determines in what order elements will be focused if the user is navigating the page using the tab key. Tabindex=0 makes it the first element selected. -1 would make it un-selectable with tabbing. I also have to add data-trigger for a link popover.
+
+-->
+			
+			<button type="button" class="btn btn-info" data-container="body" data-toggle="popover"data-placement="right" data-title="Exotic Pets" data-content="We offer specialized care for reptiles, rodents, birds, and other exotic pets">Exotic</button>
+			
+
+			<p>Wisdom Pet Medicine strives to blend the best in traditional and alternative medicine in the diagnosis and treatment of companion animals including dogs, cats, birds, <a href="#" data-trigger="focus" data-placement="bottom" role="button" data-container="body" data-toggle="popover" data-title="Reptiles" data-content="We offer specialized care for reptiles, rodents, birds, and other exotic pets">reptiles</a>, rodents, and fish. We apply the wisdom garnered in the centuries old tradition of veterinary medicine, to find the safest treatments and cures.</p>
+
+			<p>We strive to be your pet's medical experts from youth through the senior years. We build preventative health care plans for each and every one of our patients, based on breed, age, and sex, so that your pet receives the most appropriate care at crucial milestones. We want to give your pet a long and healthy life.</p>
+
+			<p>We offer specialized care for reptiles, rodents, birds, and other exotic pets</p>
+
+			<p>Wellness and senior exams, ultrasound, x-ray, and dental cleanings are just a few of our general health services.</p>
+
+        </section>
+    </div><!-- row -->
+</div><!-- content container -->
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

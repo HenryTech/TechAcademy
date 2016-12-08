@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Basic HTML</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./css/">
+	</head>	
+	<body>
+		<script>
+			var num1 = 5;
+			var total = ++num1;
+			document.write(total);
+			document.write(num1);
+			// Whether you're using num1++ or ++num1 makes a difference! See 4.2.ArithmeticOperators.js for more on this.
+			
+			var alpha = "ABCDEFG";
+			var result = alpha.substring(3, 5);
+			document.write(result + "<br>");
+			// The substring method calculates the value of all the characters between position 3 and position 5 (starting with 0, naturally) inside the string. NOTE: this is NOT INCLUSIVE of the 2nd number given! So, in this particular case, the output is DE, not DEF.
+			
+			var a = new Array(7);
+			// This creates a brand new undefined array with 7 slots.
+			
+			// MULTI-DIMENSIONAL ARRAYS!
+			// They are really just nested arrays, as JavaScript doesn't have support for true multi-dimensional arrays.
+			var myArray = [ [1, 2, 3], [4, 5, 6], [7, 8. 9] ]
+			myArray[1][1] // would return 5
+			
+			for (i=0;i<5;i++) {
+				document.write("This is iteration " + (i+1) + "<br>");
+			}
+			// This is just having fun with a for loop, but the following loop is perfectly valid, too:
+			var i = 9
+			for(;;){
+				if(i === 0)break;
+				document.write(i + "<br>")
+				i--;			
+			}
+			// The 3 for arguments don't have to be defined if you make sure you keep the conditionals for breaking the loop somewhere inside the loop.
+			
+			hoistedFunction(); // Hello! I am defined immediately!
+			notHoistedFunction(); // ReferenceError: notHoistedFunction is not defined
+			function hoistedFunction () {
+				console.log("Hello! I am defined immediately!");
+			}
+			var notHoistedFunction = function() {
+				console.log("I am not defined immediately.");
+			}
+			//Hoisted functions can be called before they are defined. Not hoisted functions must be defined before they are called.
+			
+			Math.floor(Math.random() * X + 1);
+			// Returns a random number between 1 and X. Math.floor returns the largest integer less than or equal to a number.
+			
+			Math.ceil(expression)
+			// Returns the largest integer greater than or equal to a number.
+			
+			Math.pow(2,4) // Returns 16
+			// Math.pow returns an exponential calculation like Math.pow(base, exponent).
+			
+			Math.sqrt(expression)
+			// Returns the square root of a number or expression.
+			
+			isNaN([value])
+			// Returns true if the value is not a number, else returns false.
+			
+			function person(id, name, religion) {
+				this.id = id;
+				this.name = name;
+				this.religion = religion;
+				this.getInfo = function() {
+					return this.name + " practices " + this.religion;
+				}
+			}
+			var sean = new person(10, "Sean", "Pastafarianism")
+			sean.getInfo() // Sean practices Pastafarianism
+			// person is a sub-class, sean is a new super-class. This can be used in all sorts of ways and can contain multiple functions.
+			
+			alert("Hello World");
+			// This pops up an alert window
+			
+			confirm("message"); // returns true if confirmed, else false
+			if (confirm("Are you sure you want to delete this post?")) {
+				deletePost();
+			}
+			// The confirmation window has 2 buttons on it, so you can get a true/false input from the user and do something with it.
+			
+			var name = prompt("Enter your name:");
+			document.write("Hello, " + name + "!");
+			// The prompt() displays a dialog with an optional message prompting user to input some text. If cancel is pressed, NULL is returned.
+			
+			string.trim() // Removes whitespace from both ends of a string
+			"      a   a      ".trim(); // 'a   a'
+			
+			"original string".replace("original", "replaced"); // returns "replaced string"
+			
+			string.charAt(index) // index is an integer between 0 and 1 less than the length of the string
+			"Hello World!".charAt(0); // 'H'
+			
+			string.indexOf(searchValue[, fromIndex]); //fromIndex is optional. It specifies where the search should start within the string, starting with character 0. It defaults to 0.
+			"My name is very long.".indexOf("name"); // returns 3
+			"My name is very long.".indexOf("Name"); // returns -1--it's case sensitive
+			"Where are you going?".indexOf("are",11); // returns -1
+			"Learn to Code".indexOf(""); // returns 0
+			"Learn to Code".indexOf("",3); // returns 3
+			"Learn to Code".indexOf("",229); // returns 13, which is the string length
+			// indexOf returns the value within the calling string of the first occurence of the specified value, starting the search at fromIndex. Returns -1 if the value isn't found.
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		
+		</script>
+	
+		
+		
+	</body>
+</html>

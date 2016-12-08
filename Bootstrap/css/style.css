@@ -1,0 +1,49 @@
+.bgimage {
+	background-image: url("../images/Hawkface.jpg");
+	background-position: center center;
+	background-size: cover;
+	height: 200px;
+}
+
+.imghead {
+	background-image: url("../images/Hawkface.jpg");
+	background-position: center center;
+	background-size: cover;
+	height: 300px;
+}
+
+/* Content element is for the nav.html file, to give the body some space to make room for the fixed navbar on top. I have also customized the background and text colors by rt-clicking and using inspect element to find out exactly what part of bootstrap I need to override. */
+
+.content {
+	padding-top: 70px;
+}
+
+.navbar-default {
+	border: none;
+	background-color: #b2eaa3;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #1ea071;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #1e21a5;
+}
+
+.navbar-default .navbar-nav>.active>a  {
+	color: #30f753;
+	background-color: #40a751;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+	color: #ddfb44;
+	background-color: #40a751;
+}
+
+/* Wanted to include my own logo with the practice sheet, but it was spaced funny, so I moved it up slightly with this wee element. */
+
+.navbar-brand {
+	margin-top: -10px;
+}
+
