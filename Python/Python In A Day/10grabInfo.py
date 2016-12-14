@@ -9,14 +9,14 @@ epicProgDict = {
 def searchProg(progName):
 
     # Compare input to the dictionary and output that programmer's email.
-    try:
-    # First, try the following lines, and if there are no errors...
+	# First, try the following lines, and if there are no errors...
+    try:    
         progInfo = epicProgDict[progName]
         print "Name: "+progName.title()
         print "Email: "+progInfo[0]
         print "Number: "+str(progInfo[1])
-    except:
-        # If there ARE errors, though, we run THESE lines of code:
+	# If there ARE errors, though, we run THIS line of code:
+    except:        
         print "No information found for that name."
 
 """ Let's set up a loop so the user can activate the above function

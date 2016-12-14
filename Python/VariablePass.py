@@ -99,22 +99,6 @@ def reset(nice,mean,name):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# This insures that if the program is just starting, start() is invoked.
 if __name__=="__main__":
     start()
