@@ -1,4 +1,5 @@
 # Moves files from Folder A to Folder B on the desktop
+# NOTE: This program does NOT move files in subfolders!
 
 
 
