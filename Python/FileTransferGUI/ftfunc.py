@@ -9,13 +9,14 @@
 import shutil
 import os
 import time
+from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 import ftmain, ftgui
 
 
 
-def checkFiles(self, sourcePath, destPath):
+def checkFiles(self):
     """Check files in sourcePath for creation or modification within the past 24 hours (ignoring subfolders).
 
     Returns:
@@ -23,24 +24,23 @@ def checkFiles(self, sourcePath, destPath):
     """    
     result = []
     past = time.time() - 24*60*60 # seconds stamp from 24 hours ago
-    for path, subfolder, filename in os.walk(sourcePath):
+    for path, subfolder, filename in os.walk(self.sourcePath):
         for i in filename:
             filepath = os.path.join(path, i)
             if os.path.getmtime(filepath) >= past or os.path.getctime(filepath) >= past:
                 result.append(filepath)
-    copyFiles(self, result, sourcePath, destPath)
+    copyFiles(self, result)
 
 
-def copyFiles(self, result, sourcePath, destPath):
+def copyFiles(self, result):
     """Copies all files in result list to destPath folder.
 
     Args:
         An iterable series of paths.
-        A destination path
     """    
     for filepath in result:
-        shutil.copy(filepath, destPath)
-    messagebox.showinfo(title = "Success!", message = "All files modified or created within the past 24 hours in:\n", sourcePath, "\nhave successfully been copied to:\n", destPath)
+        shutil.copy(filepath, self.destPath)
+    messagebox.showinfo(title = "Success!", message = "All files modified or created within the past 24 hours in:\n" + self.sourcePath + "\nhave successfully been copied to:\n" + self.destPath)
         
         
 def center_window(self, w, h): # pass in the tkinter frame (master) reference and the w and h
@@ -54,29 +54,29 @@ def center_window(self, w, h): # pass in the tkinter frame (master) reference an
     return centerGeo
     
     
-def sourceSelect(self, sourcePath, destPath):
-    sourcePath = filedialog.askdirectory()
+def sourceSelect(self):
+    self.sourcePath = filedialog.askdirectory()
     self.sourceEntry.delete(0, END)
-    self.sourceEntry.insert(0, sourcePath)
+    self.sourceEntry.insert(0, self.sourcePath)
+    
 
-
-def destSelect(self, sourcePath, destPath):
-    destPath = filedialog.askdirectory()
+def destSelect(self):
+    self.destPath = filedialog.askdirectory()
     self.destEntry.delete(0, END)
-    self.destEntry.insert(0, destPath)
-
-
-def validate(self, sourcePath, destPath):
-    if sourcePath == "" or destPath == "":
+    self.destEntry.insert(0, self.destPath)
+    
+    
+def validate(self):
+    if self.sourcePath == "" or self.destPath == "":
         messagebox.showinfo(title = "Warning", message = "Please select both a source and a destination folder!")
-    elif sourcePath == destPath:
+    elif self.sourcePath == self.destPath:
         messagebox.showinfo(title = "Warning", message = "Source and Destination folders must be different!")
-        clearEntry(self, sourcePath, destPath)
+        clearEntry(self)
     else:
-        checkFiles(self, sourcePath, destPath)
+        checkFiles(self)
         
         
-def clearEntry(self, sourcePath, destPath):
+def clearEntry(self):
     self.destEntry.delete(0, END)
     self.sourceEntry.delete(0, END)
     
