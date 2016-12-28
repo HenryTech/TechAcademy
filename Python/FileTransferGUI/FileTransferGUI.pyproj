@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8e0fcef0-db1e-4d78-8523-05323cbc5d69}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>ftfunc.py</StartupFile>
+    <StartupFile>ftmain.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -13,6 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
     <InterpreterVersion />
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -24,6 +25,9 @@
     <Compile Include="ftfunc.py" />
     <Compile Include="ftgui.py" />
     <Compile Include="ftmain.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebPage1.html" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
