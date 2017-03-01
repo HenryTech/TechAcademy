@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Inputs Demo</title>
+</head>
+<body>
+	
+<!-- radio buttons 
+By naming radio buttons the same thing, they get grouped and only one in the group can be selected. 
+
+Note the button at the bottom, which even though it's not a submit type, since it's at the tail end of the form, will act as a submit button. 
+
+Value tells the browser what to call that choice, as can be seen in the url when the button is clicked. -->
+	
+	<form action="">
+		<p>Do you prefer cats or dogs?</p>
+		<label for="dogs">Dogs: </label>
+		<input name="petChoice" id="dogs" type="radio" value="DOGS">
+		<label for="cats">Cats: </label>
+		<input name="petChoice" id="cats" type="radio" value="CATS">
+		
+<!-- select tag 
+This lets us create dropdown menus.
+
+Unless some options are set, the dropdown menu will be empty.
+Once a name is provided, the choice will be saved as that name (see url when go button is clicked. In this case, whatever is chosen will be saved as "color".
+
+I've also added a mood dropdown selector, which, instead of saving an emoticon under mood, it will save the value ("happy", "neutral", "sad"). -->
+
+		<p>What's your favorite color?</p>
+		<select name="color">
+			<option>Red</option>
+			<option>Orange</option>
+			<option>Yellow</option>
+		</select>
+
+		<p>What's your current mood?</p>
+		<select name="mood">
+			<option value="happy">:)</option>
+			<option value="neutral">:|</option>
+			<option value="sad">:(</option>
+		</select>
+
+		
+
+	
+
+<!-- textarea tag 
+These are used to create a space for the user to write prose = more than one line. Rows and cols attributes will control the size of the text box. 
+
+It will be saved as whatever the name is set to. -->
+		<textarea name="paragraph" id="" cols="50" rows="10"></textarea>
+
+		<button>Go!</button>
+
+	</form>
+
+</body>
+</html>

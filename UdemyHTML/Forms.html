@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Forms Demo</title>
+</head>
+<body>
+	<h1>Login</h1>
+
+<!-- form properties:
+	 action - where the form sends data (default = same page)
+	 method - what HTTP method (get/post) (default = GET) -->
+	<form action="http://wikipedia.org" method="GET">
+	<!-- Inputs can do all sorts of things, depending on type.
+		 The name attribute will tell what name to give the data that
+		 is gathered from that input. Placeholder puts some text into the field to give the user a hint. 
+		 Notice that the input elements are wrapped in a label, which
+		 is used to further enhance the UX. -->
+		<label>
+			Username:
+			<input name="username" type="text" placeholder="username">
+		</label>
+		<label>
+			Password:
+			<input name="password" type="password" placeholder="password">
+		</label>
+		<input type="submit">
+	</form>
+
+<!-- The following is an alternate syntax that can be used with forms and input fields, specifying an id for the input element and a for attribute for the label. As long as the for property matches the id property, the label will be attached to the input element. 
+
+The required attribute tells the browser to enforce that the form will not submit until that element has been filled. This type of validation is called presence validation: it makes sure something is there. There are also type validations, which is what happens if we set "type" to "email". -->
+
+	<form action="http://wikipedia.org" method="GET">
+		<label for="username">Username:</label>
+		<input name="username" type="text" id="username" placeholder="username" required>
+		<label for="password">Password:</label>
+		<input name="password" type="password" id="password" placeholder="password" required>
+		<br>
+		<label for="email">Email:</label>
+		<input name="email" type="email" id="email" placeholder="email" required>
+		<input type="submit">
+	</form>
+
+	
+	
+	
+</body>
+</html>
