@@ -1,0 +1,69 @@
+/*font-family*/
+
+p {
+	font-family: Raleway;
+}
+
+h1 {
+	font-family: Indie Flower;
+}
+
+/*font-size*/
+
+body {
+	font-size: 10px;
+}
+
+/* using em for font size makes the font x times larger than
+the parent value. So, since body font size was set to 10px, h1 (e.g.)
+will be 50px, p will be 20px, and span (if in a p) will be 40px (double
+the size of p fonts) */
+h1 {
+	font-size: 5.0em;
+}
+
+p {
+	font-size: 2.0em;
+}
+
+span {
+	font-size: 2.0em;
+}
+
+/*font-weight*/
+/* Changes font weight. Some fonts have a numerical value for this, from
+100-800 in steps of 100, where 100 is the lightest and 800 is the heaviest. */
+
+p {
+	font-weight: normal;
+}
+
+/*line-height*/
+/* This is how one would do double-spacing or 1.5 spacing. This changes
+the line height by multiplying by whatever value it had before. Since line
+height defaults to 1, I'm changing it here to 1.5. */
+p {
+	line-height: 1.5;
+}
+
+
+/*text-align*/
+ h1 {
+ 	text-align: right;
+ }
+
+ p {
+ 	text-align: center;
+ }
+
+/*text-decoration*/
+/* This can be used to underline text, or strikethrough, or overline
+etc. */
+p {
+	text-decoration: underline;
+}
+
+h1 {
+	text-decoration: line-through;
+}
+
