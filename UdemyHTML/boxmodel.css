@@ -1,0 +1,23 @@
+p {
+	/*Content - Width and Height*/
+		/* Can use %, which ensures that the element is responsive to the
+		viewport size. % always refers to the parent element. In this case,
+		the parent element is the body, so the paragraphs will be 50%
+		of the entire page width (whatever that is set to--responsive!) */
+	width: 50%;
+
+	/*Border*/
+	border: 2px solid blue;
+
+	/*Padding*/
+	/*padding: 10px;*/
+	padding-left: 40px;
+
+	/*Margin*/
+	/*margin: 100px;*/
+	/*margin-top: 500px;*/
+	/* Margin or padding can be set on one line, REMEMBER: top,
+	right, bottom, left. Just like a clock. */
+	margin: 20px 40px 500px 100px;
+
+}
