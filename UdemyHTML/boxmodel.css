@@ -18,6 +18,12 @@ p {
 	/*margin-top: 500px;*/
 	/* Margin or padding can be set on one line, REMEMBER: top,
 	right, bottom, left. Just like a clock. */
-	margin: 20px 40px 500px 100px;
+	/*margin: 20px 40px 500px 100px;*/
+	/* auto can also be used, which will center an element. */
+	margin: 0 auto 0 auto;
+	/* If I only use 2 numbers, the first will be top/bottom and the
+	2nd will be left/right. */
+	margin: 50px 20px;
+
 
 }
