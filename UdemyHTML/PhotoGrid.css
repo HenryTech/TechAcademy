@@ -1,0 +1,21 @@
+/* With width set to 30%, that puts 3 photos on a single line and leaves
+10% of the space. Given that each line needs a total of 6 margins,
+10/6 = 1.66. So setting margin to 1.66% makes a nice, even spacing
+between photos in the row. */
+img {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+p {
+	font-family: raleway;
+	margin-left: 1.66%;
+	font-weight: 800;
+	font-size: 23px;
+	text-transform: uppercase;
+	width: 30%;
+	border-bottom: 2px solid grey;
+	padding-bottom: 20px;
+}
+
