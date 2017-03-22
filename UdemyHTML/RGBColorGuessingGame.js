@@ -25,14 +25,30 @@
 // 		}
 // 	})
 // }
+var h1 = document.querySelector("h1");
+var reset = document.getElementById("reset");
+var message = document.getElementById("message");
+var easy = document.getElementById("easy");
+var hard = document.getElementById("hard");
 
+var easyMode = false;
 
-boardSetUp();
+boardSetUp(easyMode);
 
-function boardSetUp() {
-	var messageDisplay = document.getElementById("message");
+reset.addEventListener("click", boardSetUp(easyMode));
+easy.addEventListener("click", function(){
+		var easyMode = true;
+		boardSetUp(easyMode);
+	});
+hard.addEventListener("click", function(){
+		var easyMode = false;
+		boardSetUp(easyMode);
+	});	
+
+function boardSetUp(easyMode) {	
+	h1.style.backgroundColor = "#232323";
+	reset.textContent = "NEW COLORS";
 	// set up random color array	
-	var easyMode = false;
 	if(easyMode){
 		var length = 3;
 	} else {
@@ -43,10 +59,15 @@ function boardSetUp() {
 	// in the h1
 	var pickedColor = colors[getRandom(0, colors.length - 1)];	
 	document.getElementById("targetColor").textContent = pickedColor.toUpperCase();
-	// select squares and fill them in with randomly selected colors from the color
+	// fill squares in with randomly selected colors from the color
 	// array, then activate event listener and handle click event
 	var squares = document.querySelectorAll(".square");
-	for(var i = 0; i < squares.length; i++) {
+	if(easyMode){
+		for(var i = 3; i < 6; i++){
+			squares[i].style.backgroundColor = "#232323";
+		}
+	}	
+	for(var i = 0; i < colors.length; i++) {
 		// add initial colors to squares
 		squares[i].style.backgroundColor = colors[i];
 		// add click listeners to squares
@@ -55,10 +76,10 @@ function boardSetUp() {
 			var clickedColor = this.style.backgroundColor;
 			// compare color to pickedColor
 			if(clickedColor === pickedColor){				
-				success(pickedColor, squares, messageDisplay);
+				success(pickedColor, squares);
 			} else {				
 				this.classList.add("not-visible");
-				messageDisplay.textContent = "Try Again";
+				document.getElementById("message").textContent = "Try Again";
 			}
 		})
 	}
@@ -85,11 +106,12 @@ function colorSelector(length) {
 }
 
 // on success, make all squares visible and change all squares to winning color
-function success(pickedColor, squares, message) {
-	message.textContent = "Correct!";
+function success(pickedColor, squares) {
+	document.getElementById("message").textContent = "Correct!";
 	document.querySelector("h1").style.backgroundColor = pickedColor;
 	for(var i = 0; i < squares.length; i++){
 		squares[i].classList.remove("not-visible");
 		squares[i].style.backgroundColor = pickedColor;
 	}
+	document.getElementById("reset").textContent = "PLAY AGAIN?";	
 }
