@@ -35,7 +35,7 @@ var easyMode = false;
 
 boardSetUp(easyMode);
 
-reset.addEventListener("click", boardSetUp(easyMode));
+reset.addEventListener("click", boardSetUp);
 easy.addEventListener("click", function(){
 		var easyMode = true;
 		boardSetUp(easyMode);
@@ -45,7 +45,7 @@ hard.addEventListener("click", function(){
 		boardSetUp(easyMode);
 	});	
 
-function boardSetUp(easyMode) {	
+function boardSetUp() {	
 	h1.style.backgroundColor = "#232323";
 	reset.textContent = "NEW COLORS";
 	// set up random color array	
@@ -54,7 +54,7 @@ function boardSetUp(easyMode) {
 	} else {
 		var length = 6;
 	};	
-	var colors = colorSelector(length);
+	var colors = colorSelector(6);
 	// randomly select one color from array to be picked color and put the RGB value
 	// in the h1
 	var pickedColor = colors[getRandom(0, colors.length - 1)];	
@@ -62,11 +62,11 @@ function boardSetUp(easyMode) {
 	// fill squares in with randomly selected colors from the color
 	// array, then activate event listener and handle click event
 	var squares = document.querySelectorAll(".square");
-	if(easyMode){
-		for(var i = 3; i < 6; i++){
-			squares[i].style.backgroundColor = "#232323";
-		}
-	}	
+	// if(easyMode){
+	// 	for(var i = 3; i < 6; i++){
+	// 		squares[i].style.backgroundColor = "#232323";
+	// 	}
+	// }	
 	for(var i = 0; i < colors.length; i++) {
 		// add initial colors to squares
 		squares[i].style.backgroundColor = colors[i];
