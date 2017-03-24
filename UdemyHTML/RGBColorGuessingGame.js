@@ -15,14 +15,12 @@ boardSetUp(easyMode);
 reset.addEventListener("click", function(){
 	boardSetUp(easyMode);
 });
-
 easy.addEventListener("click", function(){
 		this.classList.add("selected");
 		hard.classList.remove("selected");
 		easyMode = true;		
 		boardSetUp(easyMode);
 });
-
 hard.addEventListener("click", function(){
 		this.classList.add("selected");
 		easy.classList.remove("selected");
@@ -95,8 +93,7 @@ function colorSelector(length) {
 	for(var i = 0; i < length; i++){
 		r = getRandom(0, 255), g = getRandom(0, 255), b = getRandom(0, 255);
 		colors[i] = "rgb(" + r + ", " + g + ", " + b + ")";		
-	}		
-
+	}
 	return colors;
 }
 
